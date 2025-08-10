@@ -1,0 +1,127 @@
+/* 临时移除Tailwind指令 */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* 基础样式 */
+:root {
+  --color-primary: #0077f4;
+  --color-primary-hover: #005fc3;
+  --color-text: #111827;
+  --color-text-light: #6b7280;
+  --color-background: #ffffff;
+  --color-border: #e5e7eb;
+  --gradient-start: #e6f0ff;
+  --gradient-end: #f8e6ff;
+}
+
+.dark {
+  color-scheme: dark;
+  --color-text: #f9fafb;
+  --color-text-light: #9ca3af;
+  --color-background: #111827;
+  --color-border: #374151;
+  --gradient-start: #1a1a2e;
+  --gradient-end: #16213e;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 0;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+/* 按钮样式 */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: 0 4px 14px rgba(0, 119, 244, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 119, 244, 0.4);
+}
+
+.btn-outline {
+  border: 2px solid var(--color-border);
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.dark .btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 容器 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 标题样式 */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* 卡片样式 */
+.card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.dark .card {
+  background-color: rgba(30, 30, 50, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+} 
